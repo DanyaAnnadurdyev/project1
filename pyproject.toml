@@ -8,6 +8,9 @@ packages = [{include = "project_1"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pytest = "^7.3.2"
+coverage = "^7.2.7"
+pytest-cov = "^4.1.0"
 
 
 [build-system]

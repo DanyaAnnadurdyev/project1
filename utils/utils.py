@@ -1,4 +1,5 @@
 import json
+import os
 
 
 def string_format(last_operations):
@@ -23,7 +24,7 @@ def string_format(last_operations):
             num = num[-1]
             if len(num) == 20:
                 num = list(num)
-                num[0:16] = ['*' * 16]
+                num[0:16] = ["*"]
                 num = ''.join(num)
             else:
                 num = list(num)
@@ -61,7 +62,18 @@ def string_format(last_operations):
         print(date, description, '\n', from_, num, '->', to_, num2, '\n', amount, currency)
 
 
-def get_from_file():
-    with open('operations.json', 'r', encoding='utf-8') as file:
+def get_from_file(a):
+    with open(a, 'r', encoding='utf-8') as file:
         operation_list = json.load(file)
     return operation_list
+
+
+# current_path = os.path.dirname(os.path.abspath(__file__))
+# op_file_path = os.path.join(current_path, "..", "operations.json")
+#
+#
+# def get_from_file(file_path=op_file_path):
+#     with open(file_path, "r") as file:
+#         """Получение перечень операций из файла"""
+#         data = json.load(file)
+#         return data

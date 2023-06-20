@@ -2,7 +2,7 @@ import json
 
 from utils.utils import string_format, get_from_file
 
-operation_list = get_from_file()
+operation_list = get_from_file('operations.json')
 
 operation_list = list(operation_list)
 
